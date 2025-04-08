@@ -12,7 +12,7 @@
     <script src="jspsych/plugin-html-slider-response_cs2.js"></script>
     <script src="jspsych/plugin-survey-text.js"></script>
     <script src="jspsych/plugin-browser-check.js"></script>
-    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe@0.4"></script>
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
 
 
     <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
@@ -548,7 +548,7 @@
 // Save data
     const subject_id = jsPsych.randomization.randomID(10);
     const filename = `${subject_id}.csv`;
-    const experiment_id = "WE0mUtf9dLVy";
+    
 
 
     jsPsych.data.addProperties({
@@ -561,18 +561,19 @@
     })
 
 
-    var save_data = {
-                type: jsPsychPipe,
-                action: "save",
-                experiment_id: experiment_id,
-                filename: filename,
-                data_string: ()=>jsPsych.data.get().csv()
-              }
+    
+    const save_data = {
+      type: jsPsychPipe,
+      action: "save",
+      experiment_id: "WE0mUtf9dLVy",
+      filename: filename,
+      data_string: ()=>jsPsych.data.get().csv()
+      };
     timeline.push(save_data);
 
 // Run experiment --------------------------------------------------------------------------
     //jsPsych.run(timeline);
-    jsPsych.run(timeline)
+    jsPsych.run(timeline);
     //jsPsych.simulate(timeline, "data-only");
     //jsPsych.data.get().localSave('csv','mydata.csv');
   </script>
