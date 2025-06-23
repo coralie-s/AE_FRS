@@ -538,8 +538,21 @@
     //page 11 - debrief
     var debrief = {
       type: jsPsychHtmlButtonResponse,
-      stimulus:
-      "<p class='instructions'>CHANGE THIS!!!!!",
+      stimulus: `<p class='instructions'>
+       <h3> You have completed the study. Thank you for your participation! </h3>
+        <p><strong> Click the button at the bottom of the page to receive your hit. </strong> </br> </br>
+        Below we provide some more details about the study you just completed: 
+        <br><br>
+        <strong>What was this study about? </strong> 
+        The purpose of this study is to learn more about people's preferences when they have multiple objectives. Today you have seen two or three different cookies offerings, depending on the condition you saw. The offerings differed in waiting time and number of cookies. If you saw three options, one had the same waiting time as another but contained fewer cookies, or contained the same amount of cookies but has a longer waiting time.
+        </br> </br>
+        <strong> What was the hypothesis? </strong> In this study we wanted to check whether considering a similar but less attractive option reduces the likelihood that people select the similar but better option. We additionally wanted to gauge if hunger, habits, and the way we generally react to foods influence the magnitude of this effect.
+        </br> </br>
+        <strong>Why is this study important?</strong> This study's findings could help understand an important decision making phenomenon. People's choices between two options are often influenced when a third option is offered that hardly anyone chooses because it is less attractive than one of the two. Previous research generally demonstrated that such a third option increases the choice likelihood of the dominating option. For reasons not well understood, this effect disappears or even reverses depending on the presentation format of the options, or on the type of options to choose from.
+        </br> </br>
+        <strong>References:</strong> Frederick et al. (2014). The Limits of Attraction. Journal of Marketing Research, 51, 487-507.
+        </br> </br>
+        <strong>How to contact the researcher: </strong> If you have questions or concerns about your participation or about the study itself, please contact the researcher: Coralie Samson, coralie.samson@unibas.ch.`,
       choices: ['Finish']
     }
     timeline.push(debrief);
