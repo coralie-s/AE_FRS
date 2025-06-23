@@ -539,7 +539,7 @@
     var debrief = {
       type: jsPsychHtmlButtonResponse,
       stimulus: `<p class='instructions'>
-       <h3> You have completed the study. Thank you for your participation! </h3>
+       <h3> You have completed the study. Thank you for your participation! You can read more about the study's objectives below. Otherwise, click "Continue". </h3>
         <p><strong> Click the button at the bottom of the page to receive your hit. </strong> </br> </br>
         Below we provide some more details about the study you just completed: 
         <br><br>
@@ -553,10 +553,36 @@
         <strong>References:</strong> Frederick et al. (2014). The Limits of Attraction. Journal of Marketing Research, 51, 487-507.
         </br> </br>
         <strong>How to contact the researcher: </strong> If you have questions or concerns about your participation or about the study itself, please contact the researcher: Coralie Samson, coralie.samson@unibas.ch.`,
-      choices: ['Finish']
+      choices: ['Continue']
     }
     timeline.push(debrief);
 
+// page 12 please wait
+var waiting_demand = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus:
+  "<p class='instructions'> After clicking <strong>'Finish'</strong>, your participation will be recorded. " +
+  "<strong>Please wait until the next page appears to exit.</strong> " +
+  "Otherwise, we will not be able to confirm your participation, and thus compensate you for it.</p>",
+  choices: ['Finish']
+}
+    timeline.push(waiting_demand);
+
+  // page 13 prolific
+//var prolific = {
+  //type: jsPsychHtmlKeyboardResponse,
+  //stimulus: "<p class='instructions'>Thank you for participating!</p>"+
+  //"<p class='instructions'>Please wait a moment, you will automatically be redirected to prolific.</p>",
+  //trial_duration: 3000,
+  //choices: "NO_KEYS",
+  //on_finish: function(){
+  //window.location.href = "https://app.prolific.com/submissions/complete?cc=C4B65VYL";
+  //}
+//}
+ //timeline.push(prolific);
+//var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+//var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+//var session_id = jsPsych.data.getURLVariable('SESSION_ID');
 
 // Save data
     const subject_id = jsPsych.randomization.randomID(10);
