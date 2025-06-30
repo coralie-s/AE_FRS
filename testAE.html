@@ -71,7 +71,7 @@
         <div style='text-align: left; margin-left: 80px; margin-right: 80px; font-size: 90%;'>
         <p><strong>Participation is voluntary:</strong></br>If you choose to participate, you may change your mind and leave the study at any time.  Refusal to participate or stopping your participation will involve no penalty or loss of benefits to which you are otherwise entitled.</p>
         <p><strong>What is the purpose of this research?</strong></br>The purpose of this study is to learn more about people's preferences when they buy food products.</p>
-        <p><strong>How long will I take part in this research?</strong></br>We expect your participation to take approximately 5 minutes.</p>
+        <p><strong>How long will I take part in this research?</strong></br>We expect your participation to take less than 6 minutes.</p>
         <p><strong>What can I expect if I take part in this research?</strong></br>You will make choices between different food products. You will answer a few demographic questions and questionnaires.</p>
         <p><strong>Are there risks and possible discomforts?</strong></br>There are no anticipated risks, except that you may get tired. You can rest at any time.</p>
         <p><strong>Are there any benefits from being in this research study?</strong></br>We do not expect any direct benefits to you from your taking part in this research.</p>
@@ -130,18 +130,18 @@
 // Main choice task --------------------------------------------------------------------------
     // create different sets of options (i.e., decoy conditions); shuffle order
     var D_small = jsPsych.randomization.sampleWithoutReplacement([
-      "<img src='stim/m3c3.PNG' width='100px'>",
-      "<img src='stim/m6c6.PNG' width='100px'>",
-      "<img src='stim/m4c3.PNG' width='100px'>"
+      "<img src='stim/c3m3.PNG' width='100px'>",
+      "<img src='stim/c6m7.PNG' width='100px'>",
+      "<img src='stim/c3m4.PNG' width='100px'>"
     ], 3);
     var D_big = jsPsych.randomization.sampleWithoutReplacement([
-      "<img src='stim/m3c3.PNG' width='100px'>",
-      "<img src='stim/m6c6.PNG' width='100px'>",
-      "<img src='stim/m6c5.PNG' width='100px'>"
+      "<img src='stim/c3m3.PNG' width='100px'>",
+      "<img src='stim/c6m7.PNG' width='100px'>",
+      "<img src='stim/c5m7.PNG' width='100px'>"
     ], 3);
     var D_abs = jsPsych.randomization.sampleWithoutReplacement([
-      "<img src='stim/m3c3.PNG' width='100px'>",
-      "<img src='stim/m6c6.PNG' width='100px'>"
+      "<img src='stim/c3m3.PNG' width='100px'>",
+      "<img src='stim/c6m7.PNG' width='100px'>"
     ], 2);
 
     // select one stimuli set
@@ -394,10 +394,10 @@
       <br>Among these, there are options you saw before, but other options are new. <br>
       <strong> How much do you like each option below? </strong>`,
       questions: [
-        {prompt: "<img src = 'stim/m3c3.PNG' width='100px'></img>", name: 'm3c3', labels: labels_options_rating, required: true},
-        {prompt: "<img src = 'stim/m6c6.PNG' width='100px'></img>", name: 'm6c6', labels: labels_options_rating, required: true},
-        {prompt: "<img src = 'stim/m4c3.PNG' width='100px'></img>", name: 'm4c3', labels: labels_options_rating, required: true},
-        {prompt: "<img src = 'stim/m6c5.PNG' width='100px'></img>", name: 'm6c5', labels: labels_options_rating, required: true}
+        {prompt: "<img src = 'stim/c3m3.PNG' width='100px'></img>", name: 'm3c3', labels: labels_options_rating, required: true},
+        {prompt: "<img src = 'stim/c6m7.PNG' width='100px'></img>", name: 'm6c6', labels: labels_options_rating, required: true},
+        {prompt: "<img src = 'stim/c3m4.PNG' width='100px'></img>", name: 'm4c3', labels: labels_options_rating, required: true},
+        {prompt: "<img src = 'stim/c5m7.PNG' width='100px'></img>", name: 'm6c5', labels: labels_options_rating, required: true}
       ],
       randomize_question_order: true
     }
