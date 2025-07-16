@@ -539,10 +539,9 @@
     var debrief = {
       type: jsPsychHtmlButtonResponse,
       stimulus: `<p class='instructions'>
-       <h3> You have completed the study. Thank you for your participation! You can read more about the study's objectives below. Otherwise, click "Continue". </h3>
-        <p><strong> Click the button at the bottom of the page to receive your hit. </strong> </br> </br>
-        Below we provide some more details about the study you just completed: 
-        <br><br>
+       <h3> <div style='text-align: center; margin-left: 80px; margin-right: 180px; font-size: 90%;'> You have completed the study. <br> Thank you for your participation! You can read more about the study's objectives below. <br> Otherwise, click "Continue". </h3>
+        <br>
+        <div style='text-align: left; margin-left: 180px; margin-right: 180px; font-size: 90%;'>
         <strong>What was this study about? </strong> 
         The purpose of this study is to learn more about people's preferences when they have multiple objectives. Today you have seen two or three different cookies offerings, depending on the condition you saw. The offerings differed in waiting time and number of cookies. If you saw three options, one had the same waiting time as another but contained fewer cookies, or contained the same amount of cookies but has a longer waiting time.
         </br> </br>
@@ -552,7 +551,7 @@
         </br> </br>
         <strong>References:</strong> Frederick et al. (2014). The Limits of Attraction. Journal of Marketing Research, 51, 487-507.
         </br> </br>
-        <strong>How to contact the researcher: </strong> If you have questions or concerns about your participation or about the study itself, please contact the researcher: Coralie Samson, coralie.samson@unibas.ch.`,
+        <strong>How to contact the researcher: </strong> If you have questions or concerns about your participation or about the study itself, please contact the researcher: Coralie Samson, coralie.samson@unibas.ch. </div>`,
       choices: ['Continue']
     }
     timeline.push(debrief);
@@ -612,7 +611,8 @@ var waiting_demand = {
     timeline.push(save_data);
 
 // Run experiment --------------------------------------------------------------------------
-    jsPsych.run(timeline);
+//jsPsych.run([debrief]);    
+jsPsych.run(timeline);
     
     //jsPsych.data.get().localSave('csv','mydata.csv');
   </script>
