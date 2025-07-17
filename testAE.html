@@ -27,6 +27,12 @@
       align-items: center;
       /* Centers everything */
     }
+  /* .jspsych-content {
+      max-width: 1000px; 
+      width: 100%; 
+    }
+    
+    //#jspsych- */
   </style>
 </head>
 
@@ -69,10 +75,10 @@
   var consent = {
     type: jsPsychHtmlButtonResponse,
     stimulus:
-      `<div style='text-align: center; margin-left: 300px; margin-right: 300px; border: 2px solid black; font-size: 90%;'>  
+      `<div style='max-width: 1000px; text-align: center; margin: 0 auto; border: 2px solid black; font-size: 90%;'>  
         <p><strong>Study Title:</strong><br>Preferences for food products</p>
         <p><strong>Researcher:</strong><br>Coralie Samson, University Grenoble Alpes (France)</p> </div>
-        <div style='text-align: left; margin-left: 300px; margin-right: 300px; font-size: 90%;'>
+        <div style='max-width: 1000px; text-align: left; margin: 0 auto; font-size: 90%;'>
         <p><strong>Participation is voluntary:</strong></br>If you choose to participate, you may change your mind and leave the study at any time.  Refusal to participate or stopping your participation will involve no penalty or loss of benefits to which you are otherwise entitled.</p>
         <p><strong>What is the purpose of this research?</strong></br>The purpose of this study is to learn more about people's preferences when they buy food products.</p>
         <p><strong>How long will I take part in this research?</strong></br>We expect your participation to take less than 6 minutes.</p>
@@ -96,32 +102,32 @@
   var instr = {
     type: jsPsychInstructions,
     pages: [
-      `<div style="margin-left: 80px; margin-right: 80px"><strong>Welcome.</strong><p>In this study, 
+      `<div style="max-width: 700px;"><strong>Welcome.</strong><p>In this study, 
           we want to gain insight into peoples’ preferences when choosing food items, such as cookies. 
           You will read a scenario and make decisions for different options.</p></div>`,
-      `<div style="margin-left: 80px; margin-right: 80px"><p><i>Please take a moment to imagine the following scenario.</i></p>
-          <img src = "stim/mini_cookie.jpg" width = 15%></img><br>
+      `<div style="max-width: 700px;"><p><i>Please take a moment to imagine the following scenario.</i></p>
+          <img src = "stim/mini_cookie.jpg" width = 40%></img><br>
           <p>A bakery is changing their baking process.
            Usually, they bake bite-sized cookies, such as the one above, in big batches.
            This ensures that there is plenty of supply most of the time.
            Therefore customers seldom have to wait for a new batch when they order.
            But customers rarely have the opportunity to purchase freshly baked cookies.</p></div>`,
-      `<div style="margin-left: 80px; margin-right: 80px"><p><i>Please take a moment to imagine the following scenario.</i></p>
-          <img src = "stim/mini_cookie.jpg" width = 15%></img><br>
-          <div style="margin-left: 80px; margin-right: 80px"><p>With the <strong>new baking process</strong>,
+      `<div style="max-width: 700px;"><p><i>Please take a moment to imagine the following scenario.</i></p>
+          <img src = "stim/mini_cookie.jpg" width = 40%></img><br>
+          <div style="max-width: 700px;"><p>With the <strong>new baking process</strong>,
            the batches are smaller and thus more frequent. The advantage of such a method is that
            customers can purchase <strong>freshly baked cookies at all times</strong>.
            But the <strong>waiting time to receive the order varies</strong>
            depending on how many batches are currently baking, how many orders are pending and how many cookies
            customers purchase.</p></div>`,
-      `<div style="margin-left: 80px; margin-right: 80px"><p><i>Please take a moment to imagine the following scenario.</i></p>
-          <img src = "stim/mini_cookie.jpg" width = 15%></img><br>
+      `<div style="max-width: 700px;"><p><i>Please take a moment to imagine the following scenario.</i></p>
+          <img src = "stim/mini_cookie.jpg" width = 40%></img><br>
           <p>Customers place their orders via a screen at the entrance of the bakery. The screen displays 
           <strong>available offers</strong> as well as <strong>current waiting times</strong>.
            The information is updated regularly and automatically. 
           Because this procedure is new, the bakery wants to test it before generalizing it.</p></div>`,
-      `<div style="margin-left: 80px; margin-right: 80px"><p><i>Please take a moment to imagine the following scenario.</i></p>
-          <img src = "stim/mini_cookie.jpg" width = 15%></img><br>
+      `<div style="max-width: 700px;"><p><i>Please take a moment to imagine the following scenario.</i></p>
+          <img src = "stim/mini_cookie.jpg" width = 40%></img><br>
           <p>In order to test the procedure, the bakery offers <strong>freshly baked cookies for free</strong>.
            On the next page, you will see the available offers and waiting times. Please choose the offer you prefer.</p></div>`
     ],
@@ -134,18 +140,18 @@
   // Main choice task --------------------------------------------------------------------------
   // create different sets of options (i.e., decoy conditions); shuffle order
   var D_small = jsPsych.randomization.sampleWithoutReplacement([
-    "<img src='stim/c3m3.PNG' width='100px'>",
-    "<img src='stim/c6m7.PNG' width='100px'>",
-    "<img src='stim/c3m4.PNG' width='100px'>"
+    "<img src='stim/c3m3.PNG' width='150px'>",
+    "<img src='stim/c6m7.PNG' width='150px'>",
+    "<img src='stim/c3m4.PNG' width='150px'>"
   ], 3);
   var D_big = jsPsych.randomization.sampleWithoutReplacement([
-    "<img src='stim/c3m3.PNG' width='100px'>",
-    "<img src='stim/c6m7.PNG' width='100px'>",
-    "<img src='stim/c5m7.PNG' width='100px'>"
+    "<img src='stim/c3m3.PNG' width='150px'>",
+    "<img src='stim/c6m7.PNG' width='150px'>",
+    "<img src='stim/c5m7.PNG' width='150px'>"
   ], 3);
   var D_abs = jsPsych.randomization.sampleWithoutReplacement([
-    "<img src='stim/c3m3.PNG' width='100px'>",
-    "<img src='stim/c6m7.PNG' width='100px'>"
+    "<img src='stim/c3m3.PNG' width='150px'>",
+    "<img src='stim/c6m7.PNG' width='150px'>"
   ], 2);
 
   // select one stimuli set
@@ -473,6 +479,7 @@
       { prompt: "Once I start eating, I cannot stop anymore.", name: 'hedo_cannot_stop', labels: labels_hedo_q, required: true },
       { prompt: "To eat something is like heaven on earth.", name: 'hedo_heaven', labels: labels_hedo_q, required: true },
       { prompt: "I enjoy eating much more than most other people.", name: 'hedo_enjoy', labels: labels_hedo_q, required: true },
+      { prompt: "This item is not part of the questionnaire, please simply select 'Rarely'.", name: 'attention_check', labels: labels_hedo_q, required: true },
       { prompt: "My eating behavior is completely out of control.", name: 'hedo_control', labels: labels_hedo_q, required: true },
       { prompt: "I always have appetite.", name: 'hedo_appetite', labels: labels_hedo_q, required: true }
     ],
@@ -545,9 +552,9 @@
   var debrief = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `<p class='instructions'>
-       <h3> <div style='text-align: center; margin-left: 80px; margin-right: 180px; font-size: 90%;'> You have now completed the study. <br> You can read more about our research objectives below. <br> Otherwise, click "Continue". </h3>
+       <h3> <div style='max-width: 1000px; text-align: center; margin: 0 auto; font-size: 90%;'> You have now completed the study. <br> You can read more about our research objectives below. <br> Otherwise, click "Continue". </h3>
         <br>
-        <div style='text-align: left; margin-left: 180px; margin-right: 180px; font-size: 90%;'>
+        <div style='max-width: 1000px; text-align: left; margin: 0 auto; font-size: 90%;'>
         <strong>What was this study about? </strong> 
         The purpose of this study is to learn more about people's preferences when they have multiple objectives. Today you have seen two or three different cookies offerings, depending on the condition you saw. The offerings differed in waiting time and number of cookies. If you saw three options, one had the same waiting time as another but contained fewer cookies, or contained the same amount of cookies but has a longer waiting time.
         </br> </br>
@@ -565,10 +572,10 @@
   // page 12 please wait
   var waiting_demand = {
     type: jsPsychHtmlButtonResponse,
-    stimulus:
-      "<p class='instructions'> After clicking <strong>'Finish'</strong>, your participation will be recorded. " +
-      "<strong>Please wait until the next page appears to exit.</strong> " +
-      "Otherwise, we will not be able to confirm your participation, and thus compensate you for it.</p>",
+    stimulus: `<p class='instructions'> 
+      <div style='max-width: 1000px';> After clicking <strong>'Finish'</strong>, your participation will be recorded. 
+      <br><strong>Please wait until the next page appears to exit.</strong>
+      <br>Otherwise, we will not be able to confirm your participation, and thus compensate you for it.</p> </div>`,
     choices: ['Finish']
   }
   timeline.push(waiting_demand);
@@ -593,8 +600,6 @@
   const subject_id = jsPsych.randomization.randomID(10);
   const filename = `${subject_id}.csv`;
 
-
-
   jsPsych.data.addProperties({
     subject_id: subject_id,
     condition: conditions
@@ -604,8 +609,6 @@
     //stim_randomization: stim_randomization,
     //button_randomization: button_randomization
   })
-
-
 
   const save_data = {
     type: jsPsychPipe,
@@ -617,10 +620,8 @@
   timeline.push(save_data);
 
   // Run experiment --------------------------------------------------------------------------
-  //jsPsych.run([debrief]);    
+  //jsPsych.run([waiting_demand]);    
   jsPsych.run(timeline);
 
-  //jsPsych.data.get().localSave('csv','mydata.csv');
 </script>
-
 </html>
