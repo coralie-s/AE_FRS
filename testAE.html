@@ -41,12 +41,6 @@
 
 
   // Initialize jsPsych -----------------------------------------------------------------
-  //    var jsPsych = initJsPsych({
-  //      on_finish: function() {
-  //        jsPsych.data.get().localSave('csv', 'experiment_data.csv'); // Auto-download CSV
-  //    }
-  //    });
-
   var jsPsych = initJsPsych({});
 
   // Create Timeline --------------------------------------------------------------------------
@@ -581,46 +575,45 @@
   timeline.push(waiting_demand);
 
   // page 13 prolific
-  //var prolific = {
-  //type: jsPsychHtmlKeyboardResponse,
-  //stimulus: "<p class='instructions'>Thank you for participating!</p>"+
-  //"<p class='instructions'>Please wait a moment, you will automatically be redirected to prolific.</p>",
-  //trial_duration: 3000,
-  //choices: "NO_KEYS",
-  //on_finish: function(){
-  //window.location.href = "https://app.prolific.com/submissions/complete?cc=C4B65VYL";
-  //}
-  //}
-  //timeline.push(prolific);
-  //var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
-  //var study_id = jsPsych.data.getURLVariable('STUDY_ID');
-  //var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+  var prolific = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: "<p class='instructions'>Please wait a moment, you will automatically be redirected to prolific.</p>",
+    trial_duration: 3000,
+    choices: "NO_KEYS",
+    on_finish: function () {
+      window.location.href = "https://app.prolific.com/submissions/complete?cc=C4B65VYL";
+    }
+  }
+  timeline.push(prolific);
+
+  var prolific_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+  var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+  var session_id = jsPsych.data.getURLVariable('SESSION_ID');
 
   // Save data
   const subject_id = jsPsych.randomization.randomID(10);
   const filename = `${subject_id}.csv`;
+  const experiment_id = "G5OQkuIFzWpj";
+
 
   jsPsych.data.addProperties({
     subject_id: subject_id,
-    condition: conditions
-    //prolific_id: prolific_id,
-    //study_id: study_id,
-    //session_id: session_id,
-    //stim_randomization: stim_randomization,
-    //button_randomization: button_randomization
+    condition: conditions,
+    prolific_id: prolific_id,
+    study_id: study_id,
+    session_id: session_id,
   })
 
   const save_data = {
     type: jsPsychPipe,
     action: "save",
-    experiment_id: "WE0mUtf9dLVy",
+    experiment_id: experiment_id,
     filename: filename,
     data_string: () => jsPsych.data.get().csv()
   };
   timeline.push(save_data);
 
   // Run experiment --------------------------------------------------------------------------
-  //jsPsych.run([waiting_demand]);    
   jsPsych.run(timeline);
 
 </script>
